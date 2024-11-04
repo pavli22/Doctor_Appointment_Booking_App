@@ -1,0 +1,22 @@
+::ng-deep .mat-horizontal-stepper-header-container {
+  display: none !important;
+}
+.container-fluid {
+  height: calc(100% - 52px);
+}
+.hospital-form {
+  max-height: fit-content;
+  overflow: auto;
+  padding: 10px;
+}
+.header-hospital {
+  color: #00a3ff;
+  font-weight: bold;
+}
+.content h1 {
+  font-size: 50px !important;
+  margin-bottom: 40px;
+}
+.content p {
+  font-size: 25px !important;
+}
