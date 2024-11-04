@@ -2,7 +2,7 @@
   display: none !important;
 }
 .container-fluid {
-  height: calc(100% - 52px);
+  height: calc(100% - 55px);
 }
 .hospital-form {
   max-height: fit-content;
@@ -19,4 +19,5 @@
 }
 .content p {
   font-size: 25px !important;
+  line-height: 1.5;
 }

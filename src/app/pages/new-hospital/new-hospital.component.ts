@@ -4,7 +4,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
-MatButtonModule
+import { HospitalService } from './../../core/constant/services/hospital.service';
+
 @Component({
   selector: 'app-new-hospital',
   standalone: true,
@@ -22,21 +23,30 @@ MatButtonModule
 export class NewHospitalComponent implements OnInit {
   isLinear = false;
   hospitalForm!: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private _HospitalService: HospitalService) { }
   ngOnInit(): void {
     this.hospitalForm = this.fb.group({
+      hospitalId: [''],
       hospitalName: [''],
-      contactNo: [''],
-      ownerName: [''],
-      ownerContactNo: [''],
-      ownerEmailId: [''],
-      city: [''],
-      address: [''],
+      hospitalContactNo: [''],
+      hospitalOwnerName: [''],
+      hospitalOwnerContactNo: [''],
+      hospitalEmailId: [''],
+      hospitalCity: [''],
+      hospitalAddress: [''],
       userName: [''],
       password: ['']
     });
   }
   onSubmit() {
+    this.hospitalForm.get('hospitalId')?.setValue(Math.floor(Math.random() * 10).toString())
+    console.log(this.hospitalForm);
+
+    this._HospitalService.registerHospital(this.hospitalForm.value).subscribe({
+      next: (res) => {
+        console.log(res);
+      }
+    })
 
   }
   onReset() {

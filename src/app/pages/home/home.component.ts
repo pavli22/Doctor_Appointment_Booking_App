@@ -13,7 +13,7 @@ import { NewHospitalComponent } from '../new-hospital/new-hospital.component';
 export class HomeComponent {
 
   constructor() { }
-  ngOnInit(): void {
+  ngOnInit(): void {  
 
   }
 
