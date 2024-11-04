@@ -1,0 +1,112 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-between px-4" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </div>
+            <div>
+                <a href="nav-link" class="text-decoration-none fs-4 fw-bold">Login</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid  overflow-hidden d-flex align-items-center justify-content-center">
+    <div class="row h-100 p-0">
+        <div class="content p-0 d-flex h-100 align-items-center justify-content-end">
+            <div class="right-content w-75">
+                <div class="w-100 p-0">
+                    <mat-stepper [linear]="isLinear" #stepper>
+                        <mat-step>
+                            <div class="content text-center">
+                                <h1 class="fw-bold">Welcome!</h1>
+                                <p class="text-muted">
+                                    We're glad you're here. Please fill out this form with your information so we can
+                                    better care for you.
+                                </p>
+                                <button class="custom-back-button" mat-raised-button color="primary" mat-button
+                                    matStepperNext>START</button>
+                            </div>
+                        </mat-step>
+                        <mat-step>
+                            <div class="hospital-form ">
+                                <h2 class="header-hospital">HOSPITAL REGISTRATION</h2>
+                                <form [formGroup]="hospitalForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+                                    <mat-form-field appearance="outline" class="full-width">
+                                        <mat-label>Hospital Name</mat-label>
+                                        <input matInput formControlName="hospitalName"
+                                            placeholder="Enter hospital name">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="full-width">
+                                        <mat-label>Contact No</mat-label>
+                                        <input matInput formControlName="contactNo" placeholder="Enter contact number"
+                                            type="tel">
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" class="full-width">
+                                        <mat-label>Owner Name</mat-label>
+                                        <input matInput formControlName="ownerName" placeholder="Enter owner name">
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" class="full-width">
+                                        <mat-label>Owner Contact No</mat-label>
+                                        <input matInput formControlName="ownerContactNo"
+                                            placeholder="Enter owner's contact number" type="tel">
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" class="full-width">
+                                        <mat-label>Owner Email ID</mat-label>
+                                        <input matInput formControlName="ownerEmailId" placeholder="Enter owner's email"
+                                            type="email">
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" class="full-width">
+                                        <mat-label>City</mat-label>
+                                        <input matInput formControlName="city" placeholder="Enter city">
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" class="full-width">
+                                        <mat-label>Address</mat-label>
+                                        <textarea matInput formControlName="address"
+                                            placeholder="Enter address"></textarea>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" class="full-width">
+                                        <mat-label>User Name</mat-label>
+                                        <input matInput formControlName="userName" placeholder="Enter username">
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" class="full-width">
+                                        <mat-label>Password</mat-label>
+                                        <input matInput formControlName="password" placeholder="Enter password"
+                                            type="password">
+                                    </mat-form-field>
+
+                                    <div class="button-group d-flex justify-content-between">
+                                        <div>
+                                            <button mat-button type="button" (click)="onReset()" color="accent">Reset
+                                                all</button>
+                                            <button mat-raised-button color="primary" type="submit">Register</button>
+                                        </div>
+                                        <button mat-button matStepperPrevious>Back</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </mat-step>
+                    </mat-stepper>
+                </div>
+            </div>
+            <div class="img-panel h-100">
+                <img src="/assets/patient.png" class="img-fluid  h-100 object-fit-cover">
+                <!-- <button mat-button (click)="goToNextStep()" class="position-absolute bg-danger start-0 bottom-0">Next</button> -->
+            </div>
+        </div>
+    </div>
+</div>
