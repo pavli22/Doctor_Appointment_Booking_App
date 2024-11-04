@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
+MatButtonModule
 @Component({
   selector: 'app-new-hospital',
   standalone: true,
